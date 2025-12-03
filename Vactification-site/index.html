@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>VACTification — Believe what you see</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VACTification controleert video's op AI-manipulatie en geeft onafhankelijke verificatielabels met QR-code. Binnenkort beschikbaar.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: #000000;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header, main, footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-top: 40px;
+      padding-bottom: 20px;
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    header img {
+      height: 380px;
+      margin-bottom: 10px;
+    }
+
+    .brand-name {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-motto {
+      font-size: 1rem;
+      opacity: 0.95;
+      margin-top: 4px;
+    }
+
+    .beta-pill {
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(77, 185, 255, 0.12);
+      border: 1px solid #4db9ff;
+      color: #dbeafe;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Donkere glanzende panel */
+    .panel,
+    .hero {
+      background: radial-gradient(circle at top, #111827 0%, #020617 55%, #000000 100%);
+      color: #f9fafb;
+      padding: 40px 28px;
+      border-radius: 24px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.85);
+      border: 1px solid #1f2937;
+    }
+
+    .hero {
+      margin-top: 25px;
+      animation: heroBreath 12s ease-in-out infinite;
+    }
+
+    @keyframes heroBreath {
+      0% {
+        box-shadow: 0 18px 60px rgba(0,0,0,0.85);
+      }
+      50% {
+        box-shadow: 0 24px 80px rgba(0,0,0,0.95);
+      }
+      100% {
+        box-shadow: 0 18px 60px rgba(0,0,0,0.85);
+      }
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 10px 0 16px 0;
+    }
+
+    .hero .kicker {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: #4db9ff;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+
+    section {
+      margin-top: 50px;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    section p {
+      color: #e5e7eb;
+      max-width: 700px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    .motto {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+
+    .btn-primary {
+      background: #4db9ff;
+      color: #020617;
+      box-shadow: 0 10px 30px rgba(77,185,255,0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 40px rgba(77,185,255,0.65);
+    }
+
+    .btn-secondary {
+      border: 1px solid #4db9ff;
+      color: #e5e7eb;
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(77,185,255,0.12);
+      transform: translateY(-1px);
+    }
+
+    .steps {
+      margin-top: 20px;
+    }
+
+    /* Glasachtige lichtblauwe cards voor de stappen */
+    .step {
+      background: linear-gradient(
+        145deg,
+        rgba(77, 185, 255, 0.18),
+        rgba(20, 40, 65, 0.25)
+      );
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+
+      border: 1px solid rgba(77, 185, 255, 0.45);
+      border-radius: 18px;
+
+      padding: 22px;
+      color: #e6f4ff;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+      margin-bottom: 18px;
+
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(77, 185, 255, 0.35);
+    }
+
+    /* Header van de "hoe" sectie met QR-logo */
+    .how-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .how-header h2 {
+      margin: 0;
+    }
+
+    .qr-badge {
+      flex-shrink: 0;
+    }
+
+    .qr-badge img {
+      width: 140px;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 0 0 25px rgba(77,185,255,0.6);
+      animation: qrGlow 3.5s ease-in-out infinite;
+    }
+
+    @keyframes qrGlow {
+      0% {
+        transform: translateY(0);
+        box-shadow: 0 0 18px rgba(77,185,255,0.4);
+        opacity: 0.9;
+      }
+      50% {
+        transform: translateY(-3px);
+        box-shadow: 0 0 32px rgba(77,185,255,0.9);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+        box-shadow: 0 0 18px rgba(77,185,255,0.4);
+        opacity: 0.9;
+      }
+    }
+
+    /* Mock-up binnen de "Waarom" sectie */
+    .about-mockup {
+      margin: 24px 0 22px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 55px rgba(0,0,0,0.9);
+    }
+
+    .about-mockup img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Extra rand + glow alleen voor deze panel */
+    .panel-about {
+      border: 1px solid rgba(77,185,255,0.45);
+      box-shadow: 0 0 60px rgba(77,185,255,0.30);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 25px;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      border-top: 1px solid #1f2933;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Fade-in animaties */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeInUp 0.9s ease-out forwards;
+    }
+
+    .fade-delay-1 { animation-delay: 0.15s; }
+    .fade-delay-2 { animation-delay: 0.35s; }
+    .fade-delay-3 { animation-delay: 0.55s; }
+    .fade-delay-4 { animation-delay: 0.75s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .how-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .qr-badge img {
+        width: 150px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header img {
+        height: 120px;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand-block">
+    <img src="images/vactification-logo2.JPG" alt="VACTification logo">
+    <div class="brand-name">VACTification</div>
+    <div class="brand-motto">“Believe what you see — Independently verified.”</div>
+  </div>
+  <div class="beta-pill">Binnenkort beschikbaar</div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">Onafhankelijke video-verificatie</div>
+
+    <h1>We brengen het vertrouwen terug in wat je ziet! Door video's te verifieren voor kijkers, creators en uitzenders.</h1>
+
+    <p>VACTification controleert video's op AI-manipulatie en andere vormen van bewerking. Na de analyse krijgt elke video een zichtbaar én onzichtbaar verificatielabel dat iedereen kan controleren in onze open database.</p>
+
+    <div class="motto">“Believe what you see — Independently verified.”</div>
+
+    <a href="#contact" class="btn btn-primary">Blijf op de hoogte</a>
+    <a href="mailto:contact@vactification.com" class="btn btn-secondary">Mail ons</a>
+  </section>
+
+  <!-- UITLEG -->
+  <section id="about" class="panel panel-about">
+    <h2 class="fade-in fade-delay-1">Waarom VACTification nodig is</h2>
+
+    <!-- NIEUWE MOCK-UP MET FADE-IN -->
+    <div class="about-mockup fade-in fade-delay-2">
+      <img src="images/mockup-breakingnews.png" alt="Nieuwsfragment geverifieerd door VACTification">
+    </div>
+
+    <p class="fade-in fade-delay-3">
+      In een tijd waarin AI-video's en deepfakes razendsnel opduiken, wordt het steeds moeilijker om te vertrouwen op wat je ziet.
+      Daarom bouwen wij VACTification: een onafhankelijke verificatielaag bovenop video's, waarmee kijkers én makers kunnen zien of beeldmateriaal echt is.
+    </p>
+
+    <ul class="fade-in fade-delay-4">
+      <li>Controle op AI-manipulatie en digitale bewerking</li>
+      <li>Transparant verificatielabel met QR-controle</li>
+      <li>Betrouwbaarheid voor makers, media en publieke instellingen</li>
+      <li>Helpt twijfel en misinformatie te verminderen</li>
+      <li><strong>Volledig onafhankelijk — geen platform, geen overheid, geen verborgen belangen</strong></li>
+    </ul>
+  </section>
+
+  <!-- HOE HET WERKT -->
+  <section id="how" class="panel">
+    <div class="how-header fade-in fade-delay-1">
+      <h2>Zó wordt een video geverifieerd</h2>
+      <div class="qr-badge">
+        <img src="images/qr-verificatie-logo.png" alt="VACTification QR-verificatielabel">
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step fade-in fade-delay-2">
+        <strong>1 — Upload of stuur je video</strong><br>
+        Via een beveiligde upload of API-koppeling.
+      </div>
+
+      <div class="step fade-in fade-delay-3">
+        <strong>2 — Onafhankelijke analyse</strong><br>
+        VACTification checkt de video op AI-manipulatie, bewerking, metadata en opvallende signalen.
+      </div>
+
+      <div class="step fade-in fade-delay-4">
+        <strong>3 — Je ontvangt een verificatielabel</strong><br>
+        De video krijgt een zichtbaar label en een QR-code die iedereen zelf kan controleren.
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Als eerste op de hoogte?</h2>
+
+    <p>Wil je weten wanneer de pilot start, de ontwikkelingen volgen óf ben je benieuwd wat VACTification voor jouw organisatie kan betekenen? Laat het weten — we nemen persoonlijk contact met je op.</p>
+
+    <a href="mailto:contact@vactification.com?subject=Interesse%20in%20VACTification&body=Hi%20VACTification,%0D%0A%0D%0AI%20have%20interest%20in%20your%20verification%20service.%0D%0ACan%20you%20tell%20me%20more%20about%20the%20possibilities%20and%20planning?%0D%0A%0D%0AGroet,%0D%0A[Naam]"
+       class="btn btn-primary">Stuur een e-mail</a>
+
+    <p style="font-size:0.85rem; color:#d1d5db; margin-top:10px;">
+      Je komt niet automatisch op een mailinglijst — we reageren persoonlijk.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 VACTification — All rights reserved.<br>
+  Contact: <a href="mailto:contact@vactification.com">contact@vactification.com</a>
+</footer>
+
+</body>
+</html>
