@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>VACTification — Believe what you see</title>
+  <title>404 — Page not found | VACTification</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="VACTification controleert video's op AI-manipulatie en geeft onafhankelijke verificatielabels met QR-code. Binnenkort beschikbaar.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1160,226 +1160,26 @@ details[open] > summary::after {
 </header>
 
 <main>
+  <section class="panel">
+    <h2 style="margin-top:0;">404 — Page not found</h2>
 
-  <!-- HERO -->
-<section class="hero">
-  <div class="kicker">Independent video verification</div>
+    <p style="max-width: 720px;">
+      The page you’re looking for doesn’t exist (or the link is outdated).
+      You can go back to the homepage, or jump straight to the verification flow.
+    </p>
 
-  <h1>Bring trust back to what people see.</h1>
-
-  <p>
-    VACTification verifies video authenticity by checking provenance and integrity.
-    We help creators, newsrooms, journalists, and public-interest organizations assess whether a video can be trusted.
-  </p>
-
-  <p>
-    You get a clear result, a recognizable verification label, a public code/QR that anyone can check,
-    and an optional report.
-  </p>
-
-  <div class="motto">“Believe what you see — Independently verified.”</div>
-
-  <a href="#contact" class="btn btn-primary">Join the waitlist</a>
-  <a href="mailto:contact@vactification.com" class="btn btn-secondary">Get in touch</a>
-</section>
-
-
-  <!-- UITLEG -->
-  <section id="about" class="panel panel-about">
-    <h2 class="fade-in fade-delay-1">Why VACTification exists</h2>
-
-    <!-- NIEUWE MOCK-UP MET FADE-IN -->
-    <div class="about-mockup fade-in fade-delay-2">
-      <img src="images/mockup-breakingnews.png" alt="News clip verified by VACTification">
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
+      <a class="btn btn-primary" href="index.html">Back to homepage</a>
+      <a class="btn btn-secondary" href="#legal">Legal</a>
+      <a class="btn btn-secondary" href="mailto:contact@vactification.com">Contact</a>
     </div>
 
-    <p class="fade-in fade-delay-3">
-  AI-generated video and deepfakes spread faster than ever. That makes it harder to trust what you see, especially
-  when a clip goes viral or becomes breaking news. VACTification is built as an independent verification layer that
-  helps both creators and viewers understand whether a video is trustworthy.
-</p>
-
-
-    <ul class="fade-in fade-delay-4">
-      <li>Checks provenance, AI manipulation, and editing signals</li>
-      <li>A transparent verification label with code/QR verification</li>
-      <li>Builds trust for creators, media, and public-interest organizations</li>
-      <li>Helps reduce doubt, confusion, and misinformation</li>
-      <li><strong>Fully independent — no platform, no government, no hidden interests</strong></li>
-    </ul>
-  </section>
-
-  <!-- FLOW (combined: routes + labels) -->
-  <section class="panel panel-flow" id="flow">
-    <h2 class="fade-in fade-delay-1">How verification works</h2>
-    <p class="flow-lead fade-in fade-delay-2">
-      VACTification follows one standard with two context-driven paths.
-      Ownership determines what can be established — not the value of the verification.
-    </p>
-
-    <div class="flow-tree fade-in fade-delay-3">
-      <div class="flow-start">
-        <div class="flow-node flow-node-start">
-          Start your verification
-          <div class="flow-sub">Choose the context first</div>
-        </div>
-      </div>
-
-      <div class="flow-branches">
-        <!-- OWNER -->
-        <details class="flow-branch owner">
-          <summary>
-            <span class="flow-pill owner-pill">OWNER ROUTE (pre-publication)</span>
-            <span class="flow-title">Original file available</span>
-            <span class="flow-mini">Full provenance + integrity</span>
-            <span class="flow-hint">Click to expand</span>
-          </summary>
-
-          <div class="flow-body">
-            <p>
-              For creators who recorded the video or possess the original file directly from the recording device.
-              Key provenance signals are still intact, so origin and integrity can be assessed.
-            </p>
-
-            <ul class="flow-bullets">
-              <li><strong>Provenance</strong> verification included</li>
-              <li><strong>Content integrity</strong> analysis included</li>
-              <li>Recommended <strong>before</strong> publishing or distribution</li>
-            </ul>
-
-            <div class="flow-labels">
-              <div class="flow-labels-title">Choose a verification label:</div>
-              <div class="flow-chips">
-                <span class="chip">InstantCheck</span>
-                <span class="chip">Verified+</span>
-                <span class="chip">Forensic</span>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <!-- NON-OWNER -->
-        <details class="flow-branch nonowner">
-          <summary>
-            <span class="flow-pill nonowner-pill">NON-OWNER ROUTE (post-publication)</span>
-            <span class="flow-title">Obtained via platform / third party</span>
-            <span class="flow-mini">Integrity-focused</span>
-            <span class="flow-hint">Click to expand</span>
-          </summary>
-
-          <div class="flow-body">
-            <p>
-              Videos shared via platforms are almost always recompressed or altered, which often removes metadata and
-              breaks provenance chains. This path focuses on manipulation detection and content integrity within the file.
-            </p>
-
-            <ul class="flow-bullets">
-              <li><strong>Provenance</strong>: indicators may be limited</li>
-              <li><strong>Content integrity</strong> analysis included</li>
-              <li>Designed for viewers, journalists, and researchers</li>
-            </ul>
-
-            <div class="flow-labels">
-              <div class="flow-labels-title">Choose a verification label:</div>
-              <div class="flow-chips">
-                <span class="chip">InstantCheck</span>
-                <span class="chip">Verified+</span>
-                <span class="chip">Forensic</span>
-              </div>
-            </div>
-          </div>
-        </details>
-      </div>
-<div class="flow-outcome">
-  <div class="flow-outcome-line"></div>
-
-  <div class="flow-outcome-card" tabindex="0">
-    <img class="flow-qr" src="images/QR-verificatie-logo.png"
-         alt="Scan to open the public verification page">
-
-    <div class="flow-outcome-text">
-        <div class="flow-outcome-title">Public verification</div>
-
-    <div class="flow-outcome-sub">
-    Scan the QR on a labeled video to open its verification status.
-   </div>
-
-  <div class="flow-outcome-sub flow-outcome-sub2">
-    Or type the verification code at
-    <details class="verify-pop">
-      <summary class="verify-link">verify.vactification.com</summary>
-      <span class="verify-balloon">
-        Under construction — soon you’ll be able to enter a verification code here.
-      </span>
-    </details>
-  </div>
-
-  </div>
-</div>
-
+    <div style="margin-top:18px; font-size:0.92rem; opacity:0.85;">
+      Tip: If you expected a verification page, it may be on a separate subdomain.
     </div>
-
-    <p class="flow-note fade-in fade-delay-4">
-      Ownership determines what can be established, not the value of the verification.
-    </p>
   </section>
-
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Stay informed</h2>
-
-    <p>Want to know when the pilot starts, follow our progress, or explore what VACTification could mean for your organization? Let us know, we'll reach out personally.</p>
-
-    <a href="mailto:contact@vactification.com?subject=Interesse%20in%20VACTification&body=Hi%20VACTification,%0D%0A%0D%0AI%20have%20interest%20in%20your%20verification%20service.%0D%0ACan%20you%20tell%20me%20more%20about%20the%20possibilities%20and%20planning?%0D%0A%0D%0AGroet,%0D%0A[Naam]"
-       class="btn btn-primary">Send an e-mail</a>
-
-    <p style="font-size:0.85rem; color:#d1d5db; margin-top:10px;">
-      You won't be added to a mailing list, we respond personally.
-    </p>
-  <!-- Brand lockup (onderaan contact) -->
-  <div class="contact-lockup" aria-hidden="true">
-    <img
-      src="images/NewLogo2026.png"
-      alt=""
-      loading="lazy"
-      decoding="async"
-    >
-  </div>
-
-  </section>
-
-<!-- LEGAL -->
-<section id="legal" class="panel legal">
-  <h2>Legal</h2>
-
-  <details class="legal-item">
-    <summary>Privacy policy</summary>
-    <p>
-      We do not use tracking cookies on this landing page. If you contact us by email, we only use your message to reply.
-      We do not sell personal data to third parties.
-    </p>
-  </details>
-
-  <details class="legal-item">
-    <summary>Terms</summary>
-    <p>
-      VACTification is currently in development. Information on this page is indicative and may change.
-      No guarantees are provided until services are officially launched.
-    </p>
-  </details>
-
-  <details class="legal-item">
-    <summary>Imprint</summary>
-    <p>
-      VACTification (project). Contact: <a href="mailto:contact@vactification.com">contact@vactification.com</a>.
-      More company details will be published upon launch.
-    </p>
-  </details>
-</section>
-
-
 </main>
+
 
 <footer>
   <div class="footer-links">
